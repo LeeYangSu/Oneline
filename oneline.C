@@ -1,13 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <dos.h>
 #include "oneline.h"
 
-int print_draw();
+extern char press_key;
 
 int main()
 {
+	clrscr();
+	Outside_Box();
+	Inside_Box();
+	cursor_off();
 
 	return 0;
 }
-
