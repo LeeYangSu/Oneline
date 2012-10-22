@@ -74,6 +74,4 @@ void cursor_on(void);
 //----------Key function-------------------------------------------------------------------------------------
 void check_key_value(char );
 
-void move_bar(int , int );
-
 #endif	//__ONELINE_H__
