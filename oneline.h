@@ -65,6 +65,7 @@ void Inside_Box(void);
 //----------Inverse function------------------------------------------------------------------------------------
 void VGA_inverse_attrib(unsigned char far *);
 void VGA_inverse_bar(int , int , int );
+void move_inverse(void);
 
 //----------Cursor function-------------------------------------------------------------------------------------
 void move_cursor(int ,int ,int );
@@ -72,6 +73,6 @@ void cursor_off(void);
 void cursor_on(void);
 
 //----------Key function-------------------------------------------------------------------------------------
-void check_key_value(char );
+char check_key_value(char );
 
 #endif	//__ONELINE_H__
