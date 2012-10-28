@@ -46,15 +46,21 @@
 #define		HOME			71
 #define		END				79
 
-typedef struct move_xy
+typedef struct _char_tag
+{
+	char character;
+	int cNum;
+	struct char_tag *prev;
+	struct char_tag *next;
+} CTAG;
+
+typedef struct _move_xy
 {
 	int x;
 	int y;
 }xy_point;
 
-static char press_key;
-
-//----------Print function--------------------------------------------------------------------------------------
+//----------Paint function--------------------------------------------------------------------------------------
 void print_character(int ,int ,char ,char );
 void print_string(int ,int ,char *,char );
 void Draw_Width_Line(int , int , char , char , int );
@@ -72,7 +78,13 @@ void move_cursor(int ,int ,int );
 void cursor_off(void);
 void cursor_on(void);
 
-//----------Key function-------------------------------------------------------------------------------------
+//----------Key function----------------------------------------------------------------------------------------
 char check_key_value(char );
+
+//----------New function----------------------------------------------------------------------------------------
+void new_function(void);
+
+//----------Link-List function----------------------------------------------------------------------------------
+void init_head(void);
 
 #endif	//__ONELINE_H__
