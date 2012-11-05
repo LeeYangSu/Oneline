@@ -1,5 +1,7 @@
 #include "oneline.h"
 
+extern CTAG *head;
+
 void print_character(int x ,int y ,char ch ,char attr)
 {
 	char far *location;
@@ -93,6 +95,27 @@ void Inside_Box(void)
 	return ;
 }
 
+void test_save_link(void)
+{
+	int fd;
+	char buff;
+	CTAG *write_cur;
 
+	fd = open("test.DBF", O_RDWR | O_CREAT);
+	if(0 > fd)
+	{
+		return ;
+	}
 
+	write_cur = head;
+	while(write_cur->next != 0)
+	{
+		buff = write_cur->character;
+		write(fd, &buff, sizeof(buff));
+		write_cur = write_cur->next;
+	}
 
+	close(fd);
+
+	return ;
+}
